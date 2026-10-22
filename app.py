@@ -160,7 +160,7 @@ def simple_preprocess(text):
 # LOAD DATA & TRAIN
 @st.cache_data(show_spinner=False)
 def load_data():
-    return pd.read_csv("hasil_preprocessing.csv")
+    return pd.read_csv("hasil_preprocessing(1).csv")
 
 @st.cache_resource(show_spinner=False)
 def train_models(df_hash):
@@ -206,14 +206,14 @@ if data_ok:
     st.sidebar.info(f"🤖 SVM: **{acc_svm*100:.1f}%**\n\n🌲 RF: **{acc_rf*100:.1f}%**")
 else:
     st.sidebar.error("❌ Data tidak ditemukan")
-    st.sidebar.caption("Pastikan `hasil_preprocessing.csv` ada di folder yang sama.")
+    st.sidebar.caption("Pastikan `hasil_preprocessing(1).csv` ada di folder yang sama.")
 
 st.sidebar.markdown("---")
 st.sidebar.caption("SVM · Random Forest · TF-IDF · InSet Lexicon · CRISP-DM")
 
 
 if not data_ok:
-    st.error("Gagal memuat data. Pastikan file `hasil_preprocessing.csv` ada di folder yang sama dengan `app.py`.")
+    st.error("Gagal memuat data. Pastikan file `hasil_preprocessing(1).csv` ada di folder yang sama dengan `app.py`.")
     st.stop()
 
 # SHARED VARS
